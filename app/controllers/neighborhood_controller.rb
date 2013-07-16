@@ -7,7 +7,7 @@ class NeighborhoodController < ApplicationController
     #@json = Bar.all.to_gmaps4rails
   end
 # /Get This shows the Popular Bars in Each Neighborhood
-  def show
+  def result
     @neighborhood = Neighborhood.find(params[:id])
     @bars = @neighborhood.bar_info
   end
@@ -17,6 +17,6 @@ class NeighborhoodController < ApplicationController
     @new_fav_bar.name
     @new_fav_bar.url
     @new_fav_bar.img_url
-    @new_fav_bar
+    @new_fav_bar.rating_img_url_small
   end
 end

@@ -8,9 +8,6 @@ class FavoritebarController < ApplicationController
     @bar = Favoritebar.find(params[:id])
   end
 
-
-  end
-
   def save
     @bar = Favoritebar.new
   end

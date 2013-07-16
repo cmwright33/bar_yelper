@@ -1,6 +1,6 @@
 TestApp::Application.routes.draw do
   root :to => 'neighborhood#index', as: 'landing_page'
-  get '/neighborhood/:id' => 'neighborhood#show', as: 'neighborhood_id'
+  get '/neighborhood/:id' => 'neighborhood#result', as: 'neighborhood_bars'
   resources :favoritebar
 
 
