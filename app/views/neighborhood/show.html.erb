@@ -1,0 +1,13 @@
+<%=@neighborhood.name%>
+
+<h2>The Top Bars for this Neighborhood</h2>
+
+<% @bars.each do |bar| %>
+  <%= bar['name'] %> <br/>
+  <img src="<%= bar['image_url'] %>"><br/>
+  <img src="<%= bar['rating_img_url_small'] %>">
+  <br/>
+  <br/>
+<% end %>
+
+

@@ -1,0 +1,13 @@
+<div>
+<form action="neighborhood" type="get">
+<ul>
+<% @neighborhoods.each do |neighborhood| %>
+  <li>
+    <a href="neighborhood/<%=neighborhood.id %>"><%=neighborhood.name %></a>
+  </li>
+<%end %>
+</ul>
+</form>
+</div>
+
+
