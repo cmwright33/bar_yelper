@@ -10,7 +10,6 @@ class FavoritebarController < ApplicationController
 
   def search
 
-
   end
 
   def save
