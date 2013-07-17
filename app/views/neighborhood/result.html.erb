@@ -6,9 +6,10 @@
   <a href="/bar/<%=bar['id']%>"><%= bar['name']%></a><br/>
   <img src="<%= bar['image_url'] %>"><br/>
   <img src="<%= bar['rating_img_url_small'] %>">
+  <%= button_to "Save to Favorites" save_neighborhood_path,
   <br/>
   <br/>
-  <%= button_to "save", faviortebar_save_path%>
+
 <% end %>
 
 
