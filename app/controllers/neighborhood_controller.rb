@@ -15,7 +15,7 @@ class NeighborhoodController < ApplicationController
 
   def new
     client = Yelp::Client.new
- # retrieve details of business via yelp business id
+    # retrieve details of business via yelp business id
 
       request = Yelp::V2::Business::Request::Id.new(
              :yelp_business_id => "124-old-rabbit-club-new-york",
