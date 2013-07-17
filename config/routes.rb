@@ -1,8 +1,15 @@
 TestApp::Application.routes.draw do
-  root :to => 'neighborhood#index', as: 'landing_page'
+  get '/neighborhoods' => 'neighborhood#index'
   get '/neighborhood/:id' => 'neighborhood#result', as: 'neighborhood_bars'
   get '/neighborhood/:id/bar/:id' => 'neighborhood#new'
   post '/neighborhood/:id/bar/:id' => 'neighborhood#save'
+
+  get "log_out" => "sessions#destroy", :as => "log_out"
+  get "log_in" => "sessions#new", :as => "log_in"
+  get "sign_up" => "users#new", :as => "sign_up"
+  root :to => "users#new"
+  resources :users
+  resources :sessions
 
 
   resources :favoritebar
