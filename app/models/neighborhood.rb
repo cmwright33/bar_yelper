@@ -2,7 +2,7 @@ class Neighborhood < ActiveRecord::Base
  attr_accessible :name
  has_many :bars
 
-def bar_info()
+def bar_info
   client = Yelp::Client.new
    request = Yelp::V2::Search::Request::Location.new(
              :city => 'New York',

@@ -25,7 +25,7 @@ class FavoritebarController < ApplicationController
       new_fav.image_url = @bar['image_url']
       new_fav.rating_img_url_small = @bar['rating_img_url_small']
       new_fav.save
-
+      User.find(session[:user_id]) << new_fav
   end
 
 
