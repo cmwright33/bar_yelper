@@ -5,6 +5,7 @@ class CreateFavoriteBar < ActiveRecord::Migration
       t.float :longitude
       t.boolean :gmaps
 
+      t.string :yelp_id
       t.string :name
       t.string :display_address
       t.string :url

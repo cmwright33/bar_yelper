@@ -3,7 +3,7 @@
 <h2>The Top Bars for this Neighborhood</h2>
 
 <% @bars.each do |bar| %>
-  <a href="/bar/<%=bar['id']%>"><%= bar['name']%></a><br/>
+  <a href="/neighborhood/<%= @neighborhood.id %>/bar/<%=bar['id']%>"><%= bar['name']%></a><br/>
   <img src="<%= bar['image_url'] %>"><br/>
   <img src="<%= bar['rating_img_url_small'] %>">
   <br/>
