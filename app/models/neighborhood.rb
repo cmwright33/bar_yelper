@@ -24,3 +24,14 @@ def bar_info()
 end
 
 end
+
+client = Yelp::Client.new
+
+ # retrieve details of business vi yelp business id
+ request = Yelp::V2::Business::Request::Id.new(
+             :yelp_business_id => "amor-y-amargo-new-york",
+             :consumer_key => 'gqIDK_VE3A-5KIrhMHvPWA',
+             :consumer_secret => '2y6mzC7tZIbP4h4XN3aWOhp-Jmw',
+             :token => 'au_AHWivtCP638uR5bei2MaEjyMhIzIP',
+             :token_secret => 'SIIfsthEskvZHEQwqcTvmiGm6kQ')
+ response = client.search(request)
