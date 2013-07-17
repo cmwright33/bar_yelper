@@ -13,7 +13,7 @@ TestApp::Application.routes.draw do
 
 
   resources :favoritebar
-  resources :user
+
 
 
 

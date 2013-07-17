@@ -28,7 +28,7 @@ class NeighborhoodController < ApplicationController
 
 
 
-  def save
+  # def save
  #      client = Yelp::Client.new
  # # retrieve details of business via yelp business id
 
@@ -46,5 +46,5 @@ class NeighborhoodController < ApplicationController
  #      new_fav.rating_img_url_small = @bar['rating_img_url_small']
  #      new_fav.save
  #  end
-  end
+  # end
 end
