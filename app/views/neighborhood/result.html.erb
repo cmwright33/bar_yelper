@@ -3,11 +3,12 @@
 <h2>The Top Bars for this Neighborhood</h2>
 
 <% @bars.each do |bar| %>
-  <%= bar['name'] %> <br/>
+  <a href="/bar/<%=bar['id']%>"><%= bar['name']%></a><br/>
   <img src="<%= bar['image_url'] %>"><br/>
   <img src="<%= bar['rating_img_url_small'] %>">
   <br/>
   <br/>
+  <%= button_to "save", faviortebar_save_path%>
 <% end %>
 
 

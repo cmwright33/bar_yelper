@@ -12,7 +12,7 @@ class NeighborhoodController < ApplicationController
     @bars = @neighborhood.bar_info
   end
 
-  def create
+  def save
     @new_fav_bar = FavoriteBar.new
     @new_fav_bar.name
     @new_fav_bar.url
