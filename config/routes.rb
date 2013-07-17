@@ -1,8 +1,9 @@
 TestApp::Application.routes.draw do
   get '/neighborhoods' => 'neighborhood#index'
-  get '/neighborhood/:id' => 'neighborhood#result', as: 'neighborhood_bars'
+  get '/neighborhood/:id' => 'neighborhood#result', as: 'neighborhood'
   get '/neighborhood/:id/bar/:bar_id' => 'neighborhood#new'
-  post '/neighborhood/:id/bar/:bar_id' => 'favoritebar#create'
+  # post '/neighborhood/:id/bar/:bar_id' => 'favoritebar#create'
+  post 'favoritebars' => 'favoritebar#create'
 
   get "log_out" => "sessions#destroy", :as => "log_out"
   get "log_in" => "sessions#new", :as => "log_in"
