@@ -11,25 +11,38 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130716205943) do
+ActiveRecord::Schema.define(:version => 20130717210606) do
 
   create_table "favoritebars", :force => true do |t|
-    t.float   "latitude"
-    t.float   "longitude"
-    t.boolean "gmaps"
-    t.string  "name"
-    t.string  "display_address"
-    t.string  "url"
-    t.string  "img_url"
+    t.float    "latitude"
+    t.float    "longitude"
+    t.boolean  "gmaps"
+    t.string   "yelp_id"
+    t.string   "name"
+    t.string   "display_address"
+    t.string   "url"
+    t.string   "img_url"
+    t.integer  "neighborhoods_id"
+    t.datetime "created_at",       :null => false
+    t.datetime "updated_at",       :null => false
+  end
+
+  create_table "favoritebars_users", :id => false, :force => true do |t|
+    t.integer "user"
+    t.integer "favoritebar"
   end
 
   create_table "neighborhoods", :force => true do |t|
     t.string  "name"
-    t.integer "bar_id"
+    t.integer "favoritebars_id"
   end
 
   create_table "users", :force => true do |t|
-    t.string "name"
+    t.string   "name"
+    t.string   "password_hash"
+    t.string   "password_salt"
+    t.datetime "created_at",    :null => false
+    t.datetime "updated_at",    :null => false
   end
 
 end
