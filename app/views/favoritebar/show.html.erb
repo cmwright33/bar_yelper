@@ -3,7 +3,10 @@
 <h2><%= @bar.name %></h2>
 
 <img src=" <%= @bar.img_url %>">
-<%= @bar.display_address %>
+<%= @bar.address %>,
+<%= @bar.city %>
+
 <%= link_to"Go to Yelp", url:@bar.url %>
 
 
+<%= gmaps4rails(@json) %>

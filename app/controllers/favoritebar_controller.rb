@@ -2,7 +2,14 @@ class FavoritebarController < ApplicationController
   # /Get This will list all the Favorite Bars
   def index
     @bars = Favoritebar.all
-
+    @json = @bars.to_gmaps4rails do |bar, marker|
+    marker.infowindow render_to_string(:partial => "/favoritebar/infowindow", :locals => { :bar => bar})
+    marker.title "#{bar.name}"
+    marker.json({ :name => bar.name})
+    marker.picture({:picture => "app/assets/images/bar.png",
+                    :width => 32,
+                    :height => 32})
+  end
   end
   # /Get This will show an individual bar Saved
   def show
@@ -19,12 +26,14 @@ class FavoritebarController < ApplicationController
              :consumer_secret => '2y6mzC7tZIbP4h4XN3aWOhp-Jmw',
              :token => 'au_AHWivtCP638uR5bei2MaEjyMhIzIP',
              :token_secret => 'SIIfsthEskvZHEQwqcTvmiGm6kQ')
-     @bar = client.search(request)
+      @bar = client.search(request)
       new_fav = Favoritebar.new
       new_fav.name = @bar['name']
-      new_fav.latitude = @bar['latitude']
-      new_fav.logitude = @bar['logitude']
+      new_fav.city = @bar['location']['city']
+      new_fav.address = @bar['location']['address']
       new_fav.img_url = @bar['image_url']
+      new_fav.phone = @bar['display_phone']
+      binding.pry
       new_fav.rating_img_url_small = @bar['rating_img_url_small']
       new_fav.save
       User.find(session[:user_id]).favoritebars << new_fav

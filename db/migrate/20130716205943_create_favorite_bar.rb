@@ -8,7 +8,9 @@ class CreateFavoriteBar < ActiveRecord::Migration
 
       t.string :yelp_id
       t.string :name
-      t.string :display_address
+      t.string :city
+      t.string :address
+      t.string :phone
       t.string :url
       t.string :img_url
       t.string :rating_img_url_small

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130717210606) do
+ActiveRecord::Schema.define(:version => 20130718141859) do
 
   create_table "favoritebars", :force => true do |t|
     t.float    "latitude"
@@ -19,7 +19,8 @@ ActiveRecord::Schema.define(:version => 20130717210606) do
     t.boolean  "gmaps"
     t.string   "yelp_id"
     t.string   "name"
-    t.string   "display_address"
+    t.string   "city"
+    t.string   "address"
     t.string   "url"
     t.string   "img_url"
     t.string   "rating_img_url_small"
@@ -31,6 +32,13 @@ ActiveRecord::Schema.define(:version => 20130717210606) do
   create_table "favoritebars_users", :id => false, :force => true do |t|
     t.integer "user_id"
     t.integer "favoritebar_id"
+  end
+
+  create_table "locations", :force => true do |t|
+    t.float   "latitude"
+    t.float   "longitude"
+    t.boolean "gmaps"
+    t.integer "user_id_id"
   end
 
   create_table "neighborhoods", :force => true do |t|

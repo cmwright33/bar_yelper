@@ -1,6 +1,9 @@
-<h2><%= User.find(session[:user_id]).name.pluralize %> Favorite Bars</h2>
+<h2><%= (User.find(session[:user_id]).name)%>'s Favorite Bars</h2>
 
 
 <% User.find(session[:user_id]).favoritebars.each do |bar| %>
- <%= bar.name %></br>
+ <% link_to "New", url:bar.id %>"</br>
  <% end %>
+
+
+ <%= gmaps4rails(@json) %>
