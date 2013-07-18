@@ -17,7 +17,7 @@ class FavoritebarController < ApplicationController
   def show
 
       @bar = Favoritebar.find(params[:id])
-      @json = @bars.to_gmaps4rails
+      @json = @bar.to_gmaps4rails
       # do |bar, marker|
       #   marker.infowindow render_to_string(:partial => "/favoritebar/infowindow", :locals => { :bar => bar})
       #   marker.title "#{bar.name}"
@@ -45,7 +45,6 @@ class FavoritebarController < ApplicationController
       new_fav.address = @bar['location']['address']
       new_fav.img_url = @bar['image_url']
       new_fav.phone = @bar['display_phone']
-      binding.pry
       new_fav.rating_img_url_small = @bar['rating_img_url_small']
       new_fav.save
       User.find(session[:user_id]).favoritebars << new_fav
