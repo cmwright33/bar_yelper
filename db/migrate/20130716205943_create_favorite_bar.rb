@@ -11,6 +11,7 @@ class CreateFavoriteBar < ActiveRecord::Migration
       t.string :display_address
       t.string :url
       t.string :img_url
+      t.string :rating_img_url_small
       t.references :neighborhoods
       t.timestamps
     end

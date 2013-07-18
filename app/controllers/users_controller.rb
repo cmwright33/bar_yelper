@@ -18,4 +18,11 @@ class UsersController < ApplicationController
     end
   end
 
+  def destroy
+    User.destroy
+
+    redirect_to
+
+  end
+
 end
