@@ -22,13 +22,14 @@ class FavoritebarController < ApplicationController
       new_fav = Favoritebar.new
       new_fav.name = @bar['name']
       new_fav.img_url = @bar['image_url']
-      # new_fav.rating_img_url_small = @bar['rating_img_url_small']
+      new_fav.rating_img_url_small = @bar['rating_img_url_small']
       new_fav.save
-      User.find(session[:user_id]) << new_fav
+      User.find(session[:user_id]).favoritebars << new_fav
+      redirect_to :neighborhoods
   end
 
   def destroy
-
+    Favoritebar.find(params[:id]).destroy
 
     redirect_to favoritebar_path
   end

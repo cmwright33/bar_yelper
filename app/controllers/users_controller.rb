@@ -21,8 +21,7 @@ class UsersController < ApplicationController
   def destroy
     User.destroy
 
-    redirect_to
-
+    redirect_to :root_url
   end
 
 end

@@ -1,6 +1,6 @@
-<h2>Favorite Bars</h2>
+<h2><%= User.find(session[:user_id]).name.pluralize %> Favorite Bars</h2>
 
 
-<% @bars.each do |bar| %>
- <%= bar.name %>
+<% User.find(session[:user_id]).favoritebars.each do |bar| %>
+ <%= bar.name %></br>
  <% end %>

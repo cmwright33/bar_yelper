@@ -22,14 +22,15 @@ ActiveRecord::Schema.define(:version => 20130717210606) do
     t.string   "display_address"
     t.string   "url"
     t.string   "img_url"
+    t.string   "rating_img_url_small"
     t.integer  "neighborhoods_id"
-    t.datetime "created_at",       :null => false
-    t.datetime "updated_at",       :null => false
+    t.datetime "created_at",           :null => false
+    t.datetime "updated_at",           :null => false
   end
 
   create_table "favoritebars_users", :id => false, :force => true do |t|
-    t.integer "user"
-    t.integer "favoritebar"
+    t.integer "user_id"
+    t.integer "favoritebar_id"
   end
 
   create_table "neighborhoods", :force => true do |t|

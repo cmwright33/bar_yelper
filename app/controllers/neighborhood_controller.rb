@@ -1,7 +1,7 @@
 class NeighborhoodController < ApplicationController
 # /Get This Lists All the Neighborhoods on Manhatten
   def index
-
+    # @json = Favoritebar.all.to_gmaps4rails
     @neighborhoods = Neighborhood.all
     # This is for Gmaps which I'll use later
     #@json = Bar.all.to_gmaps4rails
