@@ -25,6 +25,7 @@ class FavoritebarController < ApplicationController
       new_fav.rating_img_url_small = @bar['rating_img_url_small']
       new_fav.save
       User.find(session[:user_id]).favoritebars << new_fav
+      binding.pry
       redirect_to :neighborhoods
   end
 

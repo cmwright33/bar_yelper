@@ -1,5 +1,7 @@
 <h2>Users</h2>
 
 <% @users.each do |user| %>
-  <%= user.name %></br>
+  <%= user.name %>
+  <%= button_to "Edit", root_url %>
+</br>
   <% end %>

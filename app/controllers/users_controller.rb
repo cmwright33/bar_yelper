@@ -18,6 +18,11 @@ class UsersController < ApplicationController
     end
   end
 
+  def edit
+
+  end
+
+
   def destroy
     User.destroy
 
