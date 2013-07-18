@@ -2,7 +2,7 @@
 
 
 <% User.find(session[:user_id]).favoritebars.each do |bar| %>
- <% link_to "New", url:bar.id %>"</br>
+ <a href="/favoritebar/<%=bar.id%>"><%=bar.name%></a></br>
  <% end %>
 
 
