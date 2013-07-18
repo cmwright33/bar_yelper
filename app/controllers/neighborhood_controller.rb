@@ -4,7 +4,7 @@ class NeighborhoodController < ApplicationController
     # @json = Favoritebar.all.to_gmaps4rails
     @neighborhoods = Neighborhood.all
     # This is for Gmaps which I'll use later
-    #@json = Bar.all.to_gmaps4rails
+
   end
 # /Get This shows the Popular Bars in Each Neighborhood
   def result

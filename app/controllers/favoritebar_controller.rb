@@ -2,6 +2,7 @@ class FavoritebarController < ApplicationController
   # /Get This will list all the Favorite Bars
   def index
     @bars = Favoritebar.all
+
   end
   # /Get This will show an individual bar Saved
   def show
@@ -21,11 +22,12 @@ class FavoritebarController < ApplicationController
      @bar = client.search(request)
       new_fav = Favoritebar.new
       new_fav.name = @bar['name']
+      new_fav.latitude = @bar['latitude']
+      new_fav.logitude = @bar['logitude']
       new_fav.img_url = @bar['image_url']
       new_fav.rating_img_url_small = @bar['rating_img_url_small']
       new_fav.save
       User.find(session[:user_id]).favoritebars << new_fav
-      binding.pry
       redirect_to :neighborhoods
   end
 

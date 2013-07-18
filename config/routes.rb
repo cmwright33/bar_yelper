@@ -3,14 +3,14 @@ TestApp::Application.routes.draw do
   get '/neighborhood/:id' => 'neighborhood#result', as: 'neighborhood'
   get '/neighborhood/:id/bar/:bar_id' => 'neighborhood#new'
   post '/favoritebar/:bar_id/save' => 'favoritebar#save', as: 'save_bar'
-
+  get '/favoritebar/:id' => 'favoritebar#show'
+  put '/favoritebar/:id' => 'favoritebar#update'
   get "log_out" => "sessions#destroy", :as => "log_out"
   get "log_in" => "sessions#new", :as => "log_in"
   get "sign_up" => "users#new", :as => "sign_up"
   root :to => "users#new"
   resources :users
   resources :sessions
-
   resources :favoritebar
 
 
