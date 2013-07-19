@@ -4,7 +4,7 @@
           <ul class="nav">
             <li class="brand">Barmapper</li>
               <% if current_user.nil? %>
-                <li><%= link_to "Sign up", sign_up_path %> or </li>
+                <li><%= link_to "Sign up", sign_up_path %></li>
                 <li><%= link_to "Log in", log_in_path %></li>
               <% else %>
                 <li><%= link_to "Neighborhoods", neighborhoods_path %></li>

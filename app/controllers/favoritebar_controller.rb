@@ -25,6 +25,10 @@ class FavoritebarController < ApplicationController
       #   marker.picture({:picture => url: "bar.png",
       #                   :width => 32,
       #                   :height => 32})
+
+
+
+
     end
 
   def save
@@ -54,7 +58,6 @@ class FavoritebarController < ApplicationController
   def destroy
 
     Favoritebar.find(params[:id]).destroy
-
     redirect_to favoritebar_path
   end
 

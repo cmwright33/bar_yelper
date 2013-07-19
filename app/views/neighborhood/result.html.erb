@@ -1,14 +1,13 @@
 
-
-  <h2>The Top Bars for <%=@neighborhood.name%></h2>
-    <% @bars.each do |bar| %>
-  <p class ="clear">
+<h2>The Top Bars for <%=@neighborhood.name%></h2>
+  <% @bars.each do |bar| %>
+    <p class ="clear">
       <a href="/neighborhood/<%= @neighborhood.id %>/bar/<%= bar['id']%>"><%= bar['name']%><br/>
-        <%=image_tag( bar['image_url'] %><br/>
-        <%=image_tag( bar['rating_img_url_small'] %>
+        <%=image_tag( bar['image_url'] )%><br/>
+        <%=image_tag( bar['rating_img_url_small'] )%>
       </a>
-  </p>
-  <% end %>
+    </p>
+  <%end%>
 
 
 

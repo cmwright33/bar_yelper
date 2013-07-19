@@ -1,15 +1,19 @@
   <h2><%=current_user.name %>'s Favorite Bars</h2>
 
-  <h2><%= @bar.name %></h2>
+  <h3><%= @bar.name %></h3>
 <div class="container-fluid" >
   <div class="row-fluid">
       <div class="span2">
         <%=image_tag(@bar.img_url) %>
-        Address: <h2><%= @bar.address %>,<%= @bar.city %></h2></br>
+        Address: <%= @bar.address %>,<%= @bar.city %></br>
         Phone: <%= @bar.phone %>
       </div>
     <div class="span10">
+    <p = class="darby">
       <%= gmaps4rails(@json) %>
+      </p>
     </div>
   </div>
 </div>
+
+
