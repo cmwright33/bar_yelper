@@ -1,6 +1,6 @@
 <h2><%= (User.find(session[:user_id]).name)%>'s Favorite Bars</h2>
 
-<div class="container-fluid">
+<div class="container-fluid" >
   <div class="row-fluid">
     <div class="span2">
         <% User.find(session[:user_id]).favoritebars.each do |bar| %>
@@ -15,10 +15,3 @@
   </div>
 </div>
 
-
-
-
-
-      <!--Sidebar content-->
-
-      <!--Body content-->

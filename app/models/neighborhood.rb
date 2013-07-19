@@ -1,6 +1,6 @@
 class Neighborhood < ActiveRecord::Base
  attr_accessible :name
- has_many :bars
+
 
 def bar_info
   client = Yelp::Client.new

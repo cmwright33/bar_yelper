@@ -16,12 +16,15 @@
 body {
     background: url('Owl-Bar-5.jpg');
     background-size: 100%;
-    margin-top: 100px;
+    padding-top: 100px;
     width: 750px;
     font-family: Arial, Vernanda, san-serif;
     color: #665544;
     margin-top: 100px;
 }
+
+
+
 
 p {
     width: 230px;
@@ -31,6 +34,7 @@ p {
     background-color: #efefef;
 }
 
+h1,
 .clear {
     clear: left;
     width: 230px;

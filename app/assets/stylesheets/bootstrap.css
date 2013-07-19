@@ -226,8 +226,10 @@ body {
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 14px;
   line-height: 20px;
+  padding-top: 60px;
   color: #333333;
   background-color: #ffffff;
+  text-align: center;
 }
 
 a {

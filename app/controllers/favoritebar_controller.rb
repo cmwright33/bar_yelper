@@ -8,7 +8,7 @@ class FavoritebarController < ApplicationController
       #   marker.infowindow render_to_string(:partial => "/favoritebar/infowindow", :locals => { :bar => bar})
       #   marker.title "#{bar.name}"
       #   marker.json({ :name => bar.name})
-      #   marker.picture({:picture => "app/assets/images/bar.png",
+      #   marker.picture({:picture => url: "bar.png",
       #                   :width => 32,
       #                   :height => 32})
     # end
@@ -42,7 +42,7 @@ class FavoritebarController < ApplicationController
       new_fav = Favoritebar.new
       new_fav.name = @bar['name']
       new_fav.city = @bar['location']['city']
-      new_fav.address = @bar['location']['address']
+      new_fav.address = @bar['location']['address'][0].tr('^A-Za-z0-9 ', '')
       new_fav.img_url = @bar['image_url']
       new_fav.phone = @bar['display_phone']
       new_fav.rating_img_url_small = @bar['rating_img_url_small']

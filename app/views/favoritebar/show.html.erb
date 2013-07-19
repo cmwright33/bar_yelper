@@ -2,8 +2,8 @@
 
 <h2><%= @bar.name %></h2>
 
-<img src="<%= @bar.img_url %>">
-Address: <h2>"<%= @bar.address %>,<%= @bar.city %>"</h2></br>
+<%=image_tag(@bar.img_url) %>
+Address: <h2><%= @bar.address %>,<%= @bar.city %></h2></br>
 Phone: <%= @bar.phone %>
 
 
