@@ -6,6 +6,8 @@
        <p class ="clear">
              <a href="/favoritebar/<%=bar.id%>"><%=bar.name%></a></br>
           <% end %>
+        <%= button_to "delete", {:controller => :favoritebar,
+      :action => 'destroy', :id => bar.id }, :method => :delete %>
        </p>
      </div>
     </div>

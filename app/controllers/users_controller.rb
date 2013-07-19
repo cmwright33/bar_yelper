@@ -18,14 +18,9 @@ class UsersController < ApplicationController
     end
   end
 
-  def edit
-
-  end
-
-
   def destroy
-    User.destroy
-
+    @user = User.find(params[:id])
+    @user.destroy
     redirect_to :root_url
   end
 
