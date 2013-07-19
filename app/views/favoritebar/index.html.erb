@@ -5,9 +5,9 @@
         <% User.find(session[:user_id]).favoritebars.each do |bar| %>
        <p class ="clear">
              <a href="/favoritebar/<%=bar.id%>"><%=bar.name%></a></br>
-          <% end %>
-        <%= button_to "delete", {:controller => :favoritebar,
+             <%= button_to "Delete", {:controller => :favoritebar,
       :action => 'destroy', :id => bar.id }, :method => :delete %>
+          <% end %>
        </p>
      </div>
     </div>

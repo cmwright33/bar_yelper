@@ -51,12 +51,9 @@ class FavoritebarController < ApplicationController
   end
 
   def destroy
-
-    Favoritebar.find(params[:id]).destroy
-
     @bar = Favoritebar.find(params[:id])
     @bar.destroy
-    redirect_to :favoritebar_path
+    redirect_to :neighborhoods
   end
 
 end

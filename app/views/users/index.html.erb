@@ -3,5 +3,7 @@
 <% @users.each do |user| %>
   <%= user.name %>
   <%= button_to "Edit", root_url %>
+  <%= button_to "Delete", {:controller => :users,
+      :action => 'destroy', :id => user.id } %>
 </br>
   <% end %>
