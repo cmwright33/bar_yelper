@@ -4,14 +4,14 @@ class FavoritebarController < ApplicationController
 
       @bars = Favoritebar.all
       @json = @bars.to_gmaps4rails
-      # do |bar, marker|
-      #   marker.infowindow render_to_string(:partial => "/favoritebar/infowindow", :locals => { :bar => bar})
-      #   marker.title "#{bar.name}"
-      #   marker.json({ :name => bar.name})
-      #   marker.picture({:picture => url: "bar.png",
-      #                   :width => 32,
-      #                   :height => 32})
-    # end
+        # do |bar, marker|
+        #   marker.infowindow render_to_string(:partial => "/favoritebar/infowindow", :locals => { :bar => bar})
+        #   marker.title "#{bar.name}"
+        #   marker.json({ :name => bar.name})
+        #   marker.picture({:picture => "bar.png",
+        #                   :width => 32,
+        #                    :height => 32})
+        # end
   end
   # /Get This will show an individual bar Saved
   def show
@@ -22,7 +22,7 @@ class FavoritebarController < ApplicationController
       #   marker.infowindow render_to_string(:partial => "/favoritebar/infowindow", :locals => { :bar => bar})
       #   marker.title "#{bar.name}"
       #   marker.json({ :name => bar.name})
-      #   marker.picture({:picture => "app/assets/images/bar.png",
+      #   marker.picture({:picture => url: "bar.png",
       #                   :width => 32,
       #                   :height => 32})
     end

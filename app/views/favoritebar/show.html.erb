@@ -1,10 +1,15 @@
-<h2><%=current_user.name %>'s Favorite Bars</h2>
+  <h2><%=current_user.name %>'s Favorite Bars</h2>
 
-<h2><%= @bar.name %></h2>
-
-<%=image_tag(@bar.img_url) %>
-Address: <h2><%= @bar.address %>,<%= @bar.city %></h2></br>
-Phone: <%= @bar.phone %>
-
-
-<%= gmaps4rails(@json) %>
+  <h2><%= @bar.name %></h2>
+<div class="container-fluid" >
+  <div class="row-fluid">
+      <div class="span2">
+        <%=image_tag(@bar.img_url) %>
+        Address: <h2><%= @bar.address %>,<%= @bar.city %></h2></br>
+        Phone: <%= @bar.phone %>
+      </div>
+    <div class="span10">
+      <%= gmaps4rails(@json) %>
+    </div>
+  </div>
+</div>

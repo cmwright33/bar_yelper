@@ -6,6 +6,10 @@ class Favoritebar < ActiveRecord::Base
   validates :name, :rating_img_url_small, presence: true
 
 
+
+
+
+
   acts_as_gmappable
 
    def gmaps4rails_address

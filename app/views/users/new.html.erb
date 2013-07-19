@@ -1,28 +1,40 @@
 <h1>Sign Up</h1>
 
-
-  <%= form_for @user do |f| %>
-    <% if @user.errors.any? %>
-      <div class="error_messages">
-        <h2>Form is invalid</h2>
-        <ul>
-          <% for message in @user.errors.full_messages %>
-            <li><%= message %></li>
-          <% end %>
-        </ul>
+<div class="container-fluid" >
+  <div class="row-fluid">
+    <div class="span10">
+      <div class="control-group">
+        <div clas="arlo">
+      <%= form_for @user, :class=> 'form-horizontal' do |f| %>
+        <% if @user.errors.any? %>
+          <div class="error_messages">
+            <h2>Form is invalid</h2>
+            <ul>
+              <% for message in @user.errors.full_messages %>
+                <li><%= message %></li>
+              <% end %>
+            </ul>
+          </div>
+        </div>
+            <% end %>
+            <div class="control-group">
+            <p>
+              <%= f.label :name, :class=>'control-label' %><br />
+              <%= f.text_field :name %>
+            </p>
+            <p>
+              <%= f.label :password, :class=>'control-label'%><br />
+              <%= f.password_field :password %>
+            </p>
+            <p>
+              <%= f.label :password_confirmation, :class=>'control-label'%><br />
+              <%= f.password_field :password_confirmation %>
+            </p>
+            <p class="button"><%= f.submit %></p>
+            <% end %>
+            </div>
+          </div>
       </div>
-    <% end %>
-    <p>
-      <%= f.label :name %><br />
-      <%= f.text_field :name %>
-    </p>
-    <p>
-      <%= f.label :password %><br />
-      <%= f.password_field :password %>
-    </p>
-    <p>
-      <%= f.label :password_confirmation %><br />
-      <%= f.password_field :password_confirmation %>
-    </p>
-    <p class="button"><%= f.submit %></p>
-  <% end %>
+    </div>
+  </div>
+
