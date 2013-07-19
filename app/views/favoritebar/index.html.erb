@@ -1,10 +1,24 @@
 <h2><%= (User.find(session[:user_id]).name)%>'s Favorite Bars</h2>
 
+<div class="container-fluid">
+  <div class="row-fluid">
+    <div class="span2">
+        <% User.find(session[:user_id]).favoritebars.each do |bar| %>
+       <p class ="clear">
+             <a href="/favoritebar/<%=bar.id%>"><%=bar.name%></a></br>
+          <% end %>
+       </p>
+    </div>
+      <div class="span10">
+        <%= gmaps4rails(@json) %>
+      </div>
+  </div>
+</div>
 
-  <% User.find(session[:user_id]).favoritebars.each do |bar| %>
-   <a href="/favoritebar/<%=bar.id%>"><%=bar.name%></a></br>
-   <% end %>
 
 
 
- <%= gmaps4rails(@json) %>
+
+      <!--Sidebar content-->
+
+      <!--Body content-->
