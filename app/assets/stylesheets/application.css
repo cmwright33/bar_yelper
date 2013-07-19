@@ -13,18 +13,3 @@
  */
 
 
-}
-
-
-h1,
-.clear {
-    clear: left;
-    width: 230px;
-    float: left;
-    margin: 5px;
-    padding: 5px;
-    background-color: #efefef;
-}
-
-
-
