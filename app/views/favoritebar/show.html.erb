@@ -1,11 +1,10 @@
-<h2><%=current_user.name %></h2>
+<h2><%=current_user.name %>'s Favorite Bars</h2>
 
 <h2><%= @bar.name %></h2>
 
 <img src="<%= @bar.img_url %>">
-<%= @bar.address %>,
-<%= @bar.city %>
-<%= @bar.phone %>
+Address: <h2>"<%= @bar.address %>,<%= @bar.city %>"</h2></br>
+Phone: <%= @bar.phone %>
 
 
 <%= gmaps4rails(@json) %>

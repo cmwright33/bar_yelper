@@ -1,12 +1,15 @@
-<div class="row">
-  <form action="/neighborhoods" type="get">
-    <% @neighborhoods.each do |neighborhood| %>
-      <div class="span2">
-        <a href="neighborhood/<%=neighborhood.id %>"><%=neighborhood.name %></a>
-      </div>
-    <%end %>
-    </form>
-</div>
+
+  <div class="five">
+    <form action="/neighborhoods" type="get">
+      <% @neighborhoods.each do |neighborhood| %>
+        <div= "row-fluid">
+          <p class ="clear">
+            <a href="neighborhood/<%=neighborhood.id %>"><%=neighborhood.name %></a>
+          </p>
+        </div>
+      <%end %>
+      </form>
+  </div>
 
 
 
